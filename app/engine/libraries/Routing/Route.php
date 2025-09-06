@@ -60,8 +60,6 @@ class Route {
                     $result = $this->next($i);
                     throw new NextException($result);
                 });
-                //$this->resolveClassMethod($middleware, 'before', []);
-                //$middleware->before();
                 throw new ResponseException(null);
             } catch (NextException $e) {
                 return $e->getResult();

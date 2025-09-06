@@ -12,47 +12,6 @@ class Environment {
     protected ?Dispatcher $server;
     protected ?Dispatcher $cli;
 
-    /*
-    public function __construct() {
-        $this->request = new Dispatcher([
-            'method' => $this->requestMethod(),
-            'uri' => $this->requestUri(),
-            'queryString' => $this->queryString(),
-            'protocol' => $this->serverProtocol(),
-            'host' => $this->httpHost(),
-            'userAgent' => $this->userAgent(),
-            'referer' => $this->httpReferer(),
-            'contentType' => $this->contentType(),
-        ], '');
-
-        $this->execution = new Dispatcher([
-            'scriptName' => $this->scriptName(),
-            'scriptFileName' => $this->scriptFileName(),
-            'phpSelf' => $this->phpSelf(),
-            'requestTime' => $this->requestTime(),
-            'documentRoot' => $this->documentRoot(),
-        ], '');
-
-        $this->connection = new Dispatcher([
-            'remoteAddr' => $this->remoteAddr(),
-            'remotePort' => $this->remotePort(),
-            'https' => $this->https(),
-        ], '');
-
-        $this->server = new Dispatcher([
-            'name' => $this->serverName(),
-            'addr' => $this->serverAddr(),
-            'port' => $this->serverPort(),
-            'software' => $this->serverSoftware(),
-        ], '');
-
-        $this->cli = new Dispatcher([
-            'argc' => $this->argc(),
-            'argv' => $this->argv(),
-        ], '');
-    }
-    */
-
     protected function getRequest() {
         return new Dispatcher([
             'method' => $this->requestMethod(),
@@ -99,8 +58,6 @@ class Environment {
             'argv' => $this->argv(),
         ], '');
     }
-
-    /* -- */
 
     public function request() {
         return $this->request ??= $this->getRequest();

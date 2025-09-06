@@ -17,7 +17,6 @@ class HandleExceptions {
                     return $this->handleError(0, $error->getMessage(), $value['file'], $value['line']);
                 }
             }
-            //return $this->handleError(0, $error->getMessage(), $errorTrace[0]['file'], $errorTrace[0]['line']);
         }
         return self::handleException($error);
     }
